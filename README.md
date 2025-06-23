@@ -1,12 +1,12 @@
 # Double entry bookkeeping
 
+This is largely based on the following article:
+[Double entry accounting for engineers — Anvil](https://anvil.works/blog/double-entry-accounting-for-engineers).
+
 <!--toc:start-->
 
 - [Double entry bookkeeping](#double-entry-bookkeeping)
 <!--toc:end-->
-
-This is largely based on the following article:
-[Double entry accounting for engineers — Anvil](https://anvil.works/blog/double-entry-accounting-for-engineers).
 
 It uses the file `./transactions.csv` to read the transactions and then
 calculates the balance sheets for each account, and profit/loss for non-asset accounts.
@@ -21,4 +21,22 @@ The format of the CSV file is as following:
 
 ```bash
 cargo run
+```
+
+The output looks like
+
+```
+-- Balance sheets -------------------------------
+| Cash in Bank                   | €  -40176.96 |
+| Fixed Assets                   | €   28774.95 |
+-------------------------------------------------
+
+-- Profit/loss ----------------------------------
+| Sales                          | €   11402.01 | <-- perhaps not entirely intuitively, this is the balance after all transactions are processed
+| \ Office supplies              | €   -4280.87 |
+| \ Store sale                   | €   -1377.38 |
+| \ Equipment maintenance        | €    1748.88 |
+| \ Client payment               | €    2630.07 |
+| \ Service revenue              | €   -4972.06 |
+-------------- snip -----------------------------
 ```
