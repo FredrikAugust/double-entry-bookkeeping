@@ -1,12 +1,16 @@
 # Double entry bookkeeping
 
+_This doesn't actually perform any check that the balances balance out, nor does
+it support transactions that target more than one account._
+
 This is largely based on the following article:
 [Double entry accounting for engineers — Anvil](https://anvil.works/blog/double-entry-accounting-for-engineers).
 
 <!--toc:start-->
 
 - [Double entry bookkeeping](#double-entry-bookkeeping)
-<!--toc:end-->
+  - [Running](#running)
+  <!--toc:end-->
 
 It uses the file `./transactions.csv` to read the transactions and then
 calculates the balance sheets for each account, and profit/loss for non-asset accounts.
